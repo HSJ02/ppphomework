@@ -1,7 +1,7 @@
 import math 
 
 
-r = 4
+r = int(input("반지름은 얼마인가요? => "))
 pi = math.pi
 원의넓이 = pi * (r**2)
 
