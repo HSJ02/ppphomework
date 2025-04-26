@@ -46,7 +46,7 @@ def main():
     for i in range(1,23):
         Years+=1
         max_gap_date, max_gap = maximum_temp_gap(dates, tmax, tmin, [Years])
-        print(f"일교차가 가장 큰 일자는 {max_gap_date}이고, 해당일의 일교차는 {max_gap:.1f}도 입니다.")
+        print(f"{Years}년 중 일교차가 가장 큰 일자는 {max_gap_date[1]}월 {max_gap_date[2]}일이고, 그 당시의 일교차는 {max_gap:.1f}도 입니다.")
 
         
 
