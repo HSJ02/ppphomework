@@ -2,7 +2,7 @@
 def average(nums):
     return sum(nums)/len(nums)
 
-def str2N(nums_list: list, default_value: float = -999):
+def str2N(nums_list: list):
     real_list = []
     for num in nums_list:
         try:
