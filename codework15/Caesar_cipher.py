@@ -27,11 +27,11 @@ def caesar_encode(text : str, shift : int = 3):
             encoded_ch = chr(ord(ch)-23)
             full_text.append(encoded_ch)
 
-    return "".join(full_text) # 빈칸으로 텍스트 다 붙이기
+    return "".join(spacebar(full_text)) # 빈칸으로 텍스트 다 붙이기
 
 def main():
     text = input("문장을 입력하세요:")
-    print(spacebar(caesar_encode(text)))
+    print(caesar_encode(text))
 
 if __name__ == "__main__":
     main()
