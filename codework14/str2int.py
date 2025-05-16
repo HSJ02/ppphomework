@@ -1,4 +1,3 @@
-# 자연수만 받아보기 
 def average(nums):
     return sum(nums)/len(nums)
 
@@ -9,6 +8,9 @@ def str2N(nums_list: list):
             n = int(num)
             if n > 0:
                 real_list.append(n)
+            elif n<=0:
+                print("음의 정수 발견, 지금까지 받아들인 정수로만 결과값 도출하겠음.")
+                return real_list
                 
         except ValueError:
             print(f"자연수 아님 >>> {num}을 무시하겠음!!")
