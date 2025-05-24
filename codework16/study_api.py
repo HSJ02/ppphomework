@@ -88,20 +88,22 @@ def main():
 
     rainfall = get_weather_db(file_jeonju, 9)
     year = get_weather_db2(file_jeonju, 0)
-    problem01 = f"{sumifs(rainfall, year, selected=[2015]):.0f}"
+    problem01 = f"{sumifs(rainfall, year, selected=[2015]):.1f}"
 
-    tmax = get_weather_db(file_jeonju, 3)
+    tmax = get_weather_db(file_jeonju, 4)
     tmax2 = get_weather_db(file_jeonju2024, 3)
 
     tmin = get_weather_db(file_jeonju2024, 5)
-    problem02 = f"{tmaxifs(tmax, year, selected=[2022]):.0f}"
-    problem03 = f"{max_gap(tmax2, tmin):.0f}"
+    problem02 = f"{tmaxifs(tmax, year, selected=[2022]):.1f}"
+    problem03 = f"{max_gap(tmax2, tmin):.1f}"
 
     suwon_rain = get_weather_db(filename, 9)
     year2 = get_weather_db2(filename, 0)
-    total_suwon = f"{int(sumifs(suwon_rain, year2, selected=[2024]))}"
-    gap_J2S = int(total_suwon) - int(problem01)
-    problem04 = abs(gap_J2S)
+    total_suwon = sumifs(suwon_rain, year2, selected=[2024])
+    total_jenju = sumifs(get_weather_db(file_jeonju2024, 9),  get_weather_db2(file_jeonju2024, 0), selected=[2024])
+    gap_J2S = float(total_suwon) - float(total_jenju)
+    problem04 = f"{abs(gap_J2S):.1f}"
+
     
 
     name = "황승재"
@@ -117,3 +119,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
